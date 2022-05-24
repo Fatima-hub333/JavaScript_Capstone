@@ -4,8 +4,9 @@ const displayData = (results) => {
   const container = document.querySelector('.items');
   let displayUI = '';
   // eslint-disable-next-line array-callback-return
-  results.map((result) => {
-    displayUI += `
+  results.forEach((result, index) => {
+    console.log(33, 55, container)
+    displayUI = `
         <div class="item">
           <div class="item_images">
               <img src="${result.strCategoryThumb}" alt="${result.strCategory}">
@@ -18,23 +19,46 @@ const displayData = (results) => {
               </div>    
           </div>
           <div class="btn_rev_com">
-              <button type="button" class="commentBtn">
+              <button type="button" class="commentBtn" id="${index}">
                   Comments
               </button>
               <button type="button" class="reservationBtn">
                   Reservations
               </button>
           </div>
-        </div>  
-        `;
+        </div>`;
+  
+    container.insertAdjacentHTML('beforeend', displayUI);
+    const itemElement = container.lastChild;
+    console.log(itemElement);
+    const commentBtn = itemElement.querySelector('.commentBtn');
+    commentBtn.addEventListener('click', (event) => {
+      popupDisplay(results);
+    });
   });
-  container.innerHTML = displayUI;
+
 };
 
 const fetchData = async () => {
   const res = await fetch(url1);
   const response = await res.json();
   displayData(response.categories);
+  popupDisplay(response.categories);
 };
 
 fetchData();
+
+function popupDisplay(popup) {
+  const commentPopup = document.querySelector('.comment-popup');
+  let comment = '';
+  comment-popup.classList.add('hidden');
+  comment += `
+  <div class="comment-popup">
+  <div class="dish-img"> <img src="${popup[0].strCategoryThumb}"> </div>
+   <div class="popup-content">
+     <h2> ${popup[0].strCategory} </h2>
+     <p class="recepie"> ${popup[0].strCategoryDescription} </p>
+   </div>
+   </div>
+  `
+}

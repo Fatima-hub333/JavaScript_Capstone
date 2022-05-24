@@ -1,116 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
-.overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-  background: rgb(255, 255, 255, 0.5);
-  overflow: auto;
-  color: #000;
-}
-
-.popup-container {
+.comment-popup {
+  border: 4px solid black;
+  width: 70vh;
   margin: auto;
-  width: 90%;
-  border: 2px solid #000;
-  background-image: url(../dist/images/background\ 2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 1rem;
+  margin-top: 10%;
 }
 
-.background-blured {
-  background-color: rgb(245, 245, 245, 0.5);
-  padding: 1em;
-  border-radius: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+h2 {
+  text-align: center;
 }
 
-.popup-header {
-  width: 100%;
-  height: 40vh;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+.dish-img {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
 }
 
-.thumbnail {
-  width: 70%;
-  background-image: url(../dist/images/loading.gif);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 1rem;
-}
-
-.close-icon {
-  color: whitesmoke;
-  text-shadow: #000 2px 2px 5px;
-  font-weight: bolder;
-  font-size: xx-large;
-  position: absolute;
-  top: auto;
-  right: 3em;
-}
-
-.close-icon:hover {
-  cursor: pointer;
-}
-
-.popup-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.recipe-title {
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.comments-container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 1rem 0;
-}
-
-.comments-header {
-  font-size: larger;
-  font-weight: bolder;
-}
-
-.counter-span {
-  margin-left: 0.5rem;
-}
-
-.comments-list {
-  list-style: none;
-  margin: 1rem 0;
-}
-
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.comment-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.input {
-  margin: 1rem 0;
-  padding: 0.5rem;
-  border: 2px solid;
-}
-
-.comment-btn {
-  box-shadow: 2px 2px;
+.recepie {
+  text-align: center;
 }

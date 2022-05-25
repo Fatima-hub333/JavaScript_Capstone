@@ -16,7 +16,7 @@ const displayData = (results) => {
               <div class="like_div">
                     <button class="like_btn" type="button">❤</button>
                     <p class="num_like">5 likes</p>
-              </div>    
+              </div>
           </div>
           <div class="btn_rev_com">
               <button type="button" class="commentBtn" id="${index}">
@@ -33,7 +33,7 @@ const displayData = (results) => {
     console.log(itemElement);
     const commentBtn = itemElement.querySelector('.commentBtn');
     commentBtn.addEventListener('click', (event) => {
-      popupDisplay(results);
+      // showPopup(results);
     });
   });
 
@@ -43,22 +43,23 @@ const fetchData = async () => {
   const res = await fetch(url1);
   const response = await res.json();
   displayData(response.categories);
-  popupDisplay(response.categories);
+  // showPopup(response.categories);
 };
 
 fetchData();
 
-function popupDisplay(popup) {
-  const commentPopup = document.querySelector('.comment-popup');
-  let comment = '';
-  comment-popup.classList.add('hidden');
-  comment += `
-  <div class="comment-popup">
-  <div class="dish-img"> <img src="${popup[0].strCategoryThumb}"> </div>
-   <div class="popup-content">
-     <h2> ${popup[0].strCategory} </h2>
-     <p class="recepie"> ${popup[0].strCategoryDescription} </p>
-   </div>
-   </div>
-  `
-}
+// function popupDisplay(popup) {
+//   const commentPopup = document.querySelector('.comment-popup');
+//   let comment = '';
+//   comment-popup.classList.add('hidden');
+//   comment += `
+//   <div class="comment-popup">
+//   <div class="dish-img"> <img src="${popup[0].strCategoryThumb}"> </div>
+//    <div class="popup-content">
+//      <h2> ${popup[0].strCategory} </h2>
+//      <p class="recepie"> ${popup[0].strCategoryDescription} </p>
+//    </div>
+//    </div>
+//   `
+// }
+

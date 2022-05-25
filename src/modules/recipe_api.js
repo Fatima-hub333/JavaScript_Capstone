@@ -32,7 +32,6 @@ const displayData = (results) => {
 
     container.insertAdjacentHTML('beforeend', displayUI);
     const itemElement = container.lastChild;
-    console.log(itemElement);
     const commentBtn = itemElement.querySelector('.commentBtn');
     // eslint-disable-next-line no-unused-vars
     commentBtn.addEventListener('click', (event) => {

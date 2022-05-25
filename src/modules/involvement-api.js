@@ -1,5 +1,5 @@
 const baseUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
-const appId = '8liDuGNU0A25U3payI8M';
+const appId = 'GlABo33GV7jneHk7dokj';
 
 const addComment = async (itemId, username, comment) => {
   let result;

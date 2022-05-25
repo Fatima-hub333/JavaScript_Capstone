@@ -28,9 +28,12 @@ const loadComments = async (recipeId) => {
 const showPopup = (recipe, recipeId) => {
   id = recipeId;
   overlaySection.style.visibility = 'visible';
-  recipeTitle.textContent = recipe[0].strCategory;
-  popupThumpnail.style.backgroundImage = `url(${recipe[0].strCategoryThumb})`;
-  popupDesc.innerHTML = recipe[0].strCategoryDescription;
+  recipe.forEach((element) => {
+    console.log(element);
+    recipeTitle.textContent = element.strCategory;
+    popupThumpnail.style.backgroundImage = `url(${element.strCategoryThumb})`;
+    popupDesc.innerHTML = element.strCategoryDescription;
+  });
   loadComments(recipeId);
 };
 

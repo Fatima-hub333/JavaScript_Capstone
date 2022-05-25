@@ -1,4 +1,5 @@
 import { showPopup } from './popup.js';
+
 const url1 = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 
 const displayData = (results) => {
@@ -6,7 +7,7 @@ const displayData = (results) => {
   let displayUI = '';
   // eslint-disable-next-line array-callback-return
   results.forEach((result, index) => {
-    console.log(33, 55, container)
+    console.log(33, 55, container);
     displayUI = `
         <div class="item">
           <div class="item_images">
@@ -28,16 +29,16 @@ const displayData = (results) => {
               </button>
           </div>
         </div>`;
-  
+
     container.insertAdjacentHTML('beforeend', displayUI);
     const itemElement = container.lastChild;
     console.log(itemElement);
     const commentBtn = itemElement.querySelector('.commentBtn');
+    // eslint-disable-next-line no-unused-vars
     commentBtn.addEventListener('click', (event) => {
       showPopup(results);
     });
   });
-
 };
 
 const fetchData = async () => {
@@ -63,4 +64,3 @@ fetchData();
 //    </div>
 //   `
 // }
-

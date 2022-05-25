@@ -1,3 +1,4 @@
+import { showPopup } from './popup.js';
 const url1 = 'https://www.themealdb.com/api/json/v1/1/categories.php';
 
 const displayData = (results) => {
@@ -33,7 +34,7 @@ const displayData = (results) => {
     console.log(itemElement);
     const commentBtn = itemElement.querySelector('.commentBtn');
     commentBtn.addEventListener('click', (event) => {
-      // showPopup(results);
+      showPopup(results);
     });
   });
 
@@ -43,7 +44,7 @@ const fetchData = async () => {
   const res = await fetch(url1);
   const response = await res.json();
   displayData(response.categories);
-  // showPopup(response.categories);
+  showPopup(response.categories);
 };
 
 fetchData();

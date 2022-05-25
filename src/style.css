@@ -130,6 +130,8 @@ h2 {
   background: rgb(255, 255, 255, 0.5);
   overflow: auto;
   color: #000;
+  width: 50%;
+  margin: auto;
 }
 
 .popup-container {

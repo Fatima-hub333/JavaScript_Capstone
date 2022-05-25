@@ -6,7 +6,6 @@ const popupThumpnail = document.querySelector('.thumbnail');
 const recipeTitle = document.querySelector('.recipe-title');
 const popupDesc = document.querySelector('.popup-desc');
 const commentsList = document.querySelector('.comments-list');
-const footerSection = document.querySelector('.footer');
 const commentForm = document.querySelector('.comment-form');
 const nameInput = document.querySelector('.name-input');
 const commentInput = document.querySelector('.comment-input');
@@ -29,9 +28,9 @@ const loadComments = async (recipeId) => {
 const showPopup = (recipe, recipeId) => {
   id = recipeId;
   overlaySection.style.visibility = 'visible';
-  recipeTitle.textContent = recipe.strCategory;
-  popupThumpnail.style.backgroundImage = `url(${recipe.strCategoryThumb})`;
-  popupDesc.innerHTML = recipe.strCategoryDescription;
+  recipeTitle.textContent = recipe[0].strCategory;
+  popupThumpnail.style.backgroundImage = `url(${recipe[0].strCategoryThumb})`;
+  popupDesc.innerHTML = recipe[0].strCategoryDescription;
   loadComments(recipeId);
 };
 
